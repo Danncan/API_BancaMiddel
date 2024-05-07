@@ -162,5 +162,105 @@ namespace Datos.Properties {
                 return ((string)(this["Datos_WS_MQUPGA_API_MDP"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.7.7:5009/API_MostrarServiciosPSA.asmx")]
+        public string Datos_WS_PSA_API_MostrarServiciosPSA {
+            get {
+                return ((string)(this["Datos_WS_PSA_API_MostrarServiciosPSA"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.0.58:5023/API_MostrarServicioPXG.asmx")]
+        public string Datos_WS_PXG_API_MostrarServicioPXG {
+            get {
+                return ((string)(this["Datos_WS_PXG_API_MostrarServicioPXG"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.0.58:5008/API_MostrarServicioPIV.asmx")]
+        public string Datos_WR_PIV_API_MostrarServicioPIV {
+            get {
+                return ((string)(this["Datos_WR_PIV_API_MostrarServicioPIV"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.0.58:5003/API_MostrarServicioPMT.asmx")]
+        public string Datos_WS_PMT_API_MostrarServicioPMT {
+            get {
+                return ((string)(this["Datos_WS_PMT_API_MostrarServicioPMT"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.0.58:5001/API_MostrarServicioPDS.asmx")]
+        public string Datos_WS_PDS_API_MostrarServicioPDS {
+            get {
+                return ((string)(this["Datos_WS_PDS_API_MostrarServicioPDS"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.0.58:5010/API_MostrarServicioPSC.asmx")]
+        public string Datos_WS_PSC_API_MostrarServicioPDS {
+            get {
+                return ((string)(this["Datos_WS_PSC_API_MostrarServicioPDS"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.0.58:5002/API_MostrarServicioPMC.asmx")]
+        public string Datos_WS_PMC_API_MostrarServicioPMC {
+            get {
+                return ((string)(this["Datos_WS_PMC_API_MostrarServicioPMC"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.0.58:5024/API_MostrarServicioPIA.asmx")]
+        public string Datos_WS_PIA_API_MostrarServicioPIA {
+            get {
+                return ((string)(this["Datos_WS_PIA_API_MostrarServicioPIA"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.0.58:5021/API_MostrarServiciosPEO.asmx")]
+        public string Datos_WS_PEO_API_MostrarServiciosPEO {
+            get {
+                return ((string)(this["Datos_WS_PEO_API_MostrarServiciosPEO"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.0.58:5017/API_MostrarServicioPAH.asmx")]
+        public string Datos_WS_PAH_API_MostrarServicioPAH {
+            get {
+                return ((string)(this["Datos_WS_PAH_API_MostrarServicioPAH"]));
+            }
+        }
     }
 }

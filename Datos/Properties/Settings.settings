@@ -44,5 +44,35 @@
     <Setting Name="Datos_WS_MQUPGA_API_MDP" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://172.16.7.7:5051/API_MDP.asmx</Value>
     </Setting>
+    <Setting Name="Datos_WS_PSA_API_MostrarServiciosPSA" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.7.7:5009/API_MostrarServiciosPSA.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_PXG_API_MostrarServicioPXG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5023/API_MostrarServicioPXG.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WR_PIV_API_MostrarServicioPIV" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5008/API_MostrarServicioPIV.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_PMT_API_MostrarServicioPMT" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5003/API_MostrarServicioPMT.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_PDS_API_MostrarServicioPDS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5001/API_MostrarServicioPDS.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_PSC_API_MostrarServicioPDS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5010/API_MostrarServicioPSC.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_PMC_API_MostrarServicioPMC" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5002/API_MostrarServicioPMC.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_PIA_API_MostrarServicioPIA" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5024/API_MostrarServicioPIA.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_PEO_API_MostrarServiciosPEO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5021/API_MostrarServiciosPEO.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_PAH_API_MostrarServicioPAH" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5017/API_MostrarServicioPAH.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

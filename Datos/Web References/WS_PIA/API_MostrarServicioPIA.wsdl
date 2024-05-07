@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="MostrarServicio">
+        <s:complexType />
+      </s:element>
+      <s:element name="MostrarServicioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MostrarServicioResult" type="tns:Servicio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Servicio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MostrarPagoPIAs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MostrarPagoPIAsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MostrarPagoPIAsResult" type="tns:ArrayOfMostrarPagoPIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMostrarPagoPIA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MostrarPagoPIA" nillable="true" type="tns:MostrarPagoPIA" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MostrarPagoPIA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cedula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_pago" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="monto" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nServicio" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ActualizarEstado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cod_pago" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarEstadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizarEstadoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="MostrarServicioSoapIn">
+    <wsdl:part name="parameters" element="tns:MostrarServicio" />
+  </wsdl:message>
+  <wsdl:message name="MostrarServicioSoapOut">
+    <wsdl:part name="parameters" element="tns:MostrarServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="MostrarPagoPIAsSoapIn">
+    <wsdl:part name="parameters" element="tns:MostrarPagoPIAs" />
+  </wsdl:message>
+  <wsdl:message name="MostrarPagoPIAsSoapOut">
+    <wsdl:part name="parameters" element="tns:MostrarPagoPIAsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarEstadoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarEstado" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarEstadoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarEstadoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="API_MostrarServicioPIASoap">
+    <wsdl:operation name="MostrarServicio">
+      <wsdl:input message="tns:MostrarServicioSoapIn" />
+      <wsdl:output message="tns:MostrarServicioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarPagoPIAs">
+      <wsdl:input message="tns:MostrarPagoPIAsSoapIn" />
+      <wsdl:output message="tns:MostrarPagoPIAsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstado">
+      <wsdl:input message="tns:ActualizarEstadoSoapIn" />
+      <wsdl:output message="tns:ActualizarEstadoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="API_MostrarServicioPIASoap" type="tns:API_MostrarServicioPIASoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MostrarServicio">
+      <soap:operation soapAction="http://tempuri.org/MostrarServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarPagoPIAs">
+      <soap:operation soapAction="http://tempuri.org/MostrarPagoPIAs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstado">
+      <soap:operation soapAction="http://tempuri.org/ActualizarEstado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="API_MostrarServicioPIASoap12" type="tns:API_MostrarServicioPIASoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MostrarServicio">
+      <soap12:operation soapAction="http://tempuri.org/MostrarServicio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarPagoPIAs">
+      <soap12:operation soapAction="http://tempuri.org/MostrarPagoPIAs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstado">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarEstado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="API_MostrarServicioPIA">
+    <wsdl:port name="API_MostrarServicioPIASoap" binding="tns:API_MostrarServicioPIASoap">
+      <soap:address location="http://172.16.0.58:5024/API_MostrarServicioPIA.asmx" />
+    </wsdl:port>
+    <wsdl:port name="API_MostrarServicioPIASoap12" binding="tns:API_MostrarServicioPIASoap12">
+      <soap12:address location="http://172.16.0.58:5024/API_MostrarServicioPIA.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

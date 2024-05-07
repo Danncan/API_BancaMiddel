@@ -235,5 +235,191 @@ namespace Datos
         }
 
         #endregion
+        #region Isaac
+        WS_PSA.API_MostrarServiciosPSA wsPSA = new WS_PSA.API_MostrarServiciosPSA();
+        public WS_PSA.Servicio ServiciosPSA()
+        {
+            return wsPSA.mostrarServicio();
+        }
+        public List<WS_PSA.MostrarPagosPSA> mostrarPagosPSAs(string cedula)
+        {
+            return wsPSA.MostrarPagosPSA(cedula).ToList();
+        }
+        public bool realizarPagosPSA(string codPago)
+        {
+            return wsPSA.ActualizarEstado(codPago);
+        }
+        #endregion
+        #region Francisco 
+        WS_PXG.API_MostrarServicioPXG wsPXG = new WS_PXG.API_MostrarServicioPXG();
+
+        public mostrarServiciosBancaWeb ServiciosPXG()
+        {
+            var tempServ = wsPXG.mostrarServicio();
+            mostrarServiciosBancaWeb temBanca = new mostrarServiciosBancaWeb(tempServ.Nombre, tempServ.Descripcion);
+            return temBanca;
+        }
+        public List<mostrarPagosBancaWeb> mostrarPagosPXGs(string cedula)
+        {
+            var tempPagos = wsPXG.mostrarPagosPXG(cedula).ToList();
+            List<mostrarPagosBancaWeb> lstPagos = new List<mostrarPagosBancaWeb>();
+            mostrarPagosBancaWeb tempPago;
+            foreach (var item in tempPagos)
+            {
+                tempPago = new mostrarPagosBancaWeb(item.cedula, item.cod_pago, item.monto, item.estado, item.nServicio);
+                lstPagos.Add(tempPago);
+            }
+            return lstPagos;
+        }
+
+        public bool realizarPagosPXG(string codPago)
+        {
+            return wsPXG.actualizarEstado(codPago);
+        }
+
+        #endregion
+
+        #region Coya
+        WR_PIV.API_MostrarServicioPIV wsPiv = new WR_PIV.API_MostrarServicioPIV();
+        public WR_PIV.Servicio ServiciosPIV()
+        {
+            return wsPiv.mostrarServicio();
+        }
+        public List<WR_PIV.MostrarPagosPIV> mostrarPagosPIVs(string cedula)
+        {
+            return wsPiv.mostrarPagosPIVs(cedula).ToList();
+        }
+        public bool realizarPagosPIV(string codPago)
+        {
+            return wsPiv.ActualizarEstado(codPago);
+        }
+
+        #endregion
+
+        #region Pulso
+        WS_PMT.API_MostrarServicioPMT wsPMT = new WS_PMT.API_MostrarServicioPMT();
+        public WS_PMT.Servicio ServiciosPMT()
+        {
+            return wsPMT.mostrarServicio();
+        }
+
+        public List<WS_PMT.MostrarPagosPMT> mostrarPagosPMTs(string cedula)
+        {
+            return wsPMT.mostrarPagosPMT(cedula).ToList();
+        }
+        public bool realizarPagosPMT(string codPago)
+        {
+            return wsPMT.ActualizarEstado(codPago);
+        }
+
+        #endregion
+
+        #region Ismael
+        WS_PDS.API_MostrarServicioPDS wsPDS = new WS_PDS.API_MostrarServicioPDS();
+
+        public WS_PDS.Servicio ServiciosPDS()
+        {
+            return wsPDS.mostrarServicio();
+        }
+        public List<WS_PDS.MostrarPagosPDS> mostrarPagosPDSs(string cedula)
+        {
+            long cedulaLong = long.Parse(cedula);
+            return wsPDS.mostrarPagosPDSs(cedulaLong).ToList();
+        }
+
+        public bool realizarPagosPDS(string codPago)
+        {
+            return wsPDS.ActualizarEstado(codPago);
+        }
+        #endregion
+        #region Sergio Davila 
+        WS_PSC.API_MostrarServicioPSC wsPSC = new WS_PSC.API_MostrarServicioPSC();
+        public WS_PSC.Servicio ServiciosPSC()
+        {
+            return wsPSC.mostrarServicio();
+        }
+        public List<WS_PSC.MostrarPagosPSC> mostrarPagosPSCs(string cedula)
+        {
+            return wsPSC.mostrarPagosPSCs(cedula).ToList();
+        }
+        /*
+        public bool realizarPagosPSC(string codPago)
+        {
+            return wsPSC.(codPago);
+        }*/
+
+        #endregion
+        #region Alanis
+        WS_PMC.API_MostrarServicioPMC wsPmc = new WS_PMC.API_MostrarServicioPMC();
+
+        public WS_PMC.Servicio ServiciosPMC()
+        {
+            return wsPmc.mostrarServicio();
+        }
+        public List<WS_PMC.MostrarPagosPMC> mostrarPagosPMCs(string cedula)
+        {
+            return wsPmc.mostrarPagosPMCs(cedula).ToList();
+        }
+        public bool realizarPagosPMC(string codPago)
+        {
+            return wsPmc.ActualizarEstado(codPago);
+        }
+
+        #endregion
+        #region Arman
+        WS_PIA.API_MostrarServicioPIA wsPia = new WS_PIA.API_MostrarServicioPIA();
+
+        public WS_PIA.Servicio ServiciosPIA()
+        {
+            return wsPia.MostrarServicio();
+        }
+
+        public List<WS_PIA.MostrarPagoPIA> mostrarPagosPIAs(string cedula)
+        {
+            return wsPia.MostrarPagoPIAs(cedula).ToList();
+        }
+
+        public bool realizarPagosPIA(string codPago)
+        {
+            return wsPia.ActualizarEstado(codPago);
+        }
+        #endregion
+
+        #region Steve el Guapo Rosero
+        WS_PEO.API_MostrarServiciosPEO wsPeo = new WS_PEO.API_MostrarServiciosPEO();
+
+        public WS_PEO.Servicio ServiciosPEO()
+        {
+            return wsPeo.mostrarServicio();
+        }
+
+        public List<WS_PEO.MostrarPagosPEO> mostrarPagosPEOs(string cedula)
+        {
+            return wsPeo.MostrarPagosPEOs(cedula).ToList();
+        }
+
+        public bool realizarPagosPEO(string codPago)
+        {
+            return wsPeo.ActualizarEstado(codPago);
+        }
+        #endregion
+
+        #region Matew
+        WS_PAH.API_MostrarServicioPAH wsPah = new WS_PAH.API_MostrarServicioPAH();
+        public WS_PAH.Servicio ServiciosPAH()
+        {
+            return wsPah.mostrarServicio();
+        }
+
+        public List<WS_PAH.MostrarPagosPAH> mostrarPagosPAHs(string cedula)
+        {
+            return wsPah.mostrarPagosPCAs(cedula).ToList();
+        }
+        public bool realizarPagosPAH(string codPago)
+        {
+            return wsPah.ActualizarEstado(codPago);
+        }
+
+        #endregion
     }
 }
