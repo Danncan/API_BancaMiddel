@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="mostrarServicio">
+        <s:complexType />
+      </s:element>
+      <s:element name="mostrarServicioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mostrarServicioResult" type="tns:Servicio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Servicio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MostrarPagosPAL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pago" type="tns:PAGO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PAGO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CLIENTE" type="tns:CLIENTE" />
+          <s:element minOccurs="1" maxOccurs="1" name="PAGO_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLI_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PAGO_COD" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PAGO_TIPO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PAGO_MONTO" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PAGO_FECHA" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="PAGO_PENDIENTE" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PAGO_ESTADO" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CLIENTE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ESCUCHAS" type="tns:ArrayOfESCUCHAS" />
+          <s:element minOccurs="0" maxOccurs="1" name="PAGO" type="tns:ArrayOfPAGO" />
+          <s:element minOccurs="0" maxOccurs="1" name="SUSCRIPCION" type="tns:ArrayOfSUSCRIPCION" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLI_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLI_NOMBRE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLI_APELLIDO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLI_PAIS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLI_EMAIL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CLI_ESTADO" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfESCUCHAS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ESCUCHAS" nillable="true" type="tns:ESCUCHAS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ESCUCHAS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AUDIOS" type="tns:AUDIOS" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLIENTE" type="tns:CLIENTE" />
+          <s:element minOccurs="1" maxOccurs="1" name="ESCUCHA_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AUDIO_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLI_ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ESCUCHA_FECHA" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ESCHUCHA_ESTADO" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AUDIOS">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AUDIO_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AUDIO_TITULO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AUDIO_DURACION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AUDIO_AUTOR" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AUDIO_FECHA" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="AUDIO_ESTADO" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESCUCHAS" type="tns:ArrayOfESCUCHAS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPAGO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PAGO" nillable="true" type="tns:PAGO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSUSCRIPCION">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SUSCRIPCION" nillable="true" type="tns:SUSCRIPCION" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SUSCRIPCION">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CLIENTE" type="tns:CLIENTE" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPOPLAN" type="tns:TIPOPLAN" />
+          <s:element minOccurs="1" maxOccurs="1" name="SUS_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CLI_ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TIPOPLAN_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SUS_STARTDATE" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="SUS_ENDDATE" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="SUS_RENOVACIONAUTO" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SUS_ESTADO" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TIPOPLAN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SUSCRIPCION" type="tns:ArrayOfSUSCRIPCION" />
+          <s:element minOccurs="1" maxOccurs="1" name="TIPOPLAN_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPOPLAN_NOMBRE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPOPLAN_DURACION" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TIPOPLAN_PRECIO" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TIPOPLAN_ESTADO" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MostrarPagosPALResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MostrarPagosPALResult" type="tns:MostrarPagosPAL" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MostrarPagosPAL">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cedula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_pago" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="monto" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nServicio" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="mostrarPagosPALs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mostrarPagosPALsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mostrarPagosPALsResult" type="tns:ArrayOfMostrarPagosPAL" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMostrarPagosPAL">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MostrarPagosPAL" nillable="true" type="tns:MostrarPagosPAL" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ActualizarEstado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cod_pago" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarEstadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizarEstadoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="mostrarServicioSoapIn">
+    <wsdl:part name="parameters" element="tns:mostrarServicio" />
+  </wsdl:message>
+  <wsdl:message name="mostrarServicioSoapOut">
+    <wsdl:part name="parameters" element="tns:mostrarServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="MostrarPagosPALSoapIn">
+    <wsdl:part name="parameters" element="tns:MostrarPagosPAL" />
+  </wsdl:message>
+  <wsdl:message name="MostrarPagosPALSoapOut">
+    <wsdl:part name="parameters" element="tns:MostrarPagosPALResponse" />
+  </wsdl:message>
+  <wsdl:message name="mostrarPagosPALsSoapIn">
+    <wsdl:part name="parameters" element="tns:mostrarPagosPALs" />
+  </wsdl:message>
+  <wsdl:message name="mostrarPagosPALsSoapOut">
+    <wsdl:part name="parameters" element="tns:mostrarPagosPALsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarEstadoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarEstado" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarEstadoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarEstadoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="API_MostrarServicioPALSoap">
+    <wsdl:operation name="mostrarServicio">
+      <wsdl:input message="tns:mostrarServicioSoapIn" />
+      <wsdl:output message="tns:mostrarServicioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarPagosPAL">
+      <wsdl:input message="tns:MostrarPagosPALSoapIn" />
+      <wsdl:output message="tns:MostrarPagosPALSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mostrarPagosPALs">
+      <wsdl:input message="tns:mostrarPagosPALsSoapIn" />
+      <wsdl:output message="tns:mostrarPagosPALsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstado">
+      <wsdl:input message="tns:ActualizarEstadoSoapIn" />
+      <wsdl:output message="tns:ActualizarEstadoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="API_MostrarServicioPALSoap" type="tns:API_MostrarServicioPALSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mostrarServicio">
+      <soap:operation soapAction="http://tempuri.org/mostrarServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarPagosPAL">
+      <soap:operation soapAction="http://tempuri.org/MostrarPagosPAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mostrarPagosPALs">
+      <soap:operation soapAction="http://tempuri.org/mostrarPagosPALs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstado">
+      <soap:operation soapAction="http://tempuri.org/ActualizarEstado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="API_MostrarServicioPALSoap12" type="tns:API_MostrarServicioPALSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mostrarServicio">
+      <soap12:operation soapAction="http://tempuri.org/mostrarServicio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarPagosPAL">
+      <soap12:operation soapAction="http://tempuri.org/MostrarPagosPAL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mostrarPagosPALs">
+      <soap12:operation soapAction="http://tempuri.org/mostrarPagosPALs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstado">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarEstado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="API_MostrarServicioPAL">
+    <wsdl:port name="API_MostrarServicioPALSoap" binding="tns:API_MostrarServicioPALSoap">
+      <soap:address location="http://172.16.0.58:5015/API_MostrarServicioPAL.asmx" />
+    </wsdl:port>
+    <wsdl:port name="API_MostrarServicioPALSoap12" binding="tns:API_MostrarServicioPALSoap12">
+      <soap12:address location="http://172.16.0.58:5015/API_MostrarServicioPAL.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

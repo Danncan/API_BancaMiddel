@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="mostrarServicio">
+        <s:complexType />
+      </s:element>
+      <s:element name="mostrarServicioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mostrarServicioResult" type="tns:Servicio" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Servicio">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="mostrarPagosPANs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cedula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mostrarPagosPANsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mostrarPagosPANsResult" type="tns:ArrayOfMostrarPagosPAN" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMostrarPagosPAN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MostrarPagosPAN" nillable="true" type="tns:MostrarPagosPAN" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MostrarPagosPAN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="cedula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cod_pago" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="monto" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="nServicio" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ActualizarEstado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codPago" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarEstadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizarEstadoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="mostrarServicioSoapIn">
+    <wsdl:part name="parameters" element="tns:mostrarServicio" />
+  </wsdl:message>
+  <wsdl:message name="mostrarServicioSoapOut">
+    <wsdl:part name="parameters" element="tns:mostrarServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="mostrarPagosPANsSoapIn">
+    <wsdl:part name="parameters" element="tns:mostrarPagosPANs" />
+  </wsdl:message>
+  <wsdl:message name="mostrarPagosPANsSoapOut">
+    <wsdl:part name="parameters" element="tns:mostrarPagosPANsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarEstadoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarEstado" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarEstadoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarEstadoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="API_MostrarServicioPANSoap">
+    <wsdl:operation name="mostrarServicio">
+      <wsdl:input message="tns:mostrarServicioSoapIn" />
+      <wsdl:output message="tns:mostrarServicioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mostrarPagosPANs">
+      <wsdl:input message="tns:mostrarPagosPANsSoapIn" />
+      <wsdl:output message="tns:mostrarPagosPANsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstado">
+      <wsdl:input message="tns:ActualizarEstadoSoapIn" />
+      <wsdl:output message="tns:ActualizarEstadoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="API_MostrarServicioPANSoap" type="tns:API_MostrarServicioPANSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mostrarServicio">
+      <soap:operation soapAction="http://tempuri.org/mostrarServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mostrarPagosPANs">
+      <soap:operation soapAction="http://tempuri.org/mostrarPagosPANs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstado">
+      <soap:operation soapAction="http://tempuri.org/ActualizarEstado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="API_MostrarServicioPANSoap12" type="tns:API_MostrarServicioPANSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mostrarServicio">
+      <soap12:operation soapAction="http://tempuri.org/mostrarServicio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mostrarPagosPANs">
+      <soap12:operation soapAction="http://tempuri.org/mostrarPagosPANs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEstado">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarEstado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="API_MostrarServicioPAN">
+    <wsdl:port name="API_MostrarServicioPANSoap" binding="tns:API_MostrarServicioPANSoap">
+      <soap:address location="http://172.16.0.58:5019/API_MostrarServicioPAN.asmx" />
+    </wsdl:port>
+    <wsdl:port name="API_MostrarServicioPANSoap12" binding="tns:API_MostrarServicioPANSoap12">
+      <soap12:address location="http://172.16.0.58:5019/API_MostrarServicioPAN.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

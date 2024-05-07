@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Datos.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Datos_WS_PCA_API_MostrarServicioPCA" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5022/API_MostrarServicioPCA.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_PIT_API_MostrarServicioPIT" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5014/API_MostrarServicioPIT.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_PAN_API_MostrarServicioPAN" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5019/API_MostrarServicioPAN.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_PTO_API_MostrarServicioPTO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5005/API_MostrarServicioPTO.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_PDT_API_MostrarPagoPDT" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5020/API_MostrarPagoPDT.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_PAL_API_MostrarServicioPAL" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5015/API_MostrarServicioPAL.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_PMX_API_MostrarServicioPMX" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5016/API_MostrarServicioPMX.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_PRJ_Api_Integracion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5011/Api_Integracion.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
