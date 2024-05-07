@@ -47,8 +47,12 @@ namespace Middleware
             servicios = new mostrarServiciosBancaWeb(tempPDT.Nombre, tempPDT.Descripcion);
             lstServiciosBanca.Add(servicios);
 
+            var tempPSM = datosIntegracion.ServiciosPSM();
+            servicios = new mostrarServiciosBancaWeb(tempPSM.Nombre, tempPSM.Descripcion);
+            lstServiciosBanca.Add(servicios);
 
-
+            var temMQUServ = datosIntegracion.ServiciosMQUServ();
+            lstServiciosBanca.Add(temMQUServ);
 
             return lstServiciosBanca;
 
@@ -124,6 +128,22 @@ namespace Middleware
                         lstPagosBanca.Add(pagos);
                     }
                     break;
+                case "Pago de Suscripcion de Musica":
+                    var tempPagosPSM = datosIntegracion.mostrarPagosPSMs(cedula);
+                    foreach (var item in tempPagosPSM)
+                    {
+                        mostrarPagosBancaWeb pagos = new mostrarPagosBancaWeb(item.cedula, item.cod_pago, item.monto, item.estado, item.nServicio);
+                        lstPagosBanca.Add(pagos);
+                    }
+                    break;
+                case "Pago Membresia":
+                   var temoPagosPMA = datosIntegracion.mostrarPagosPDTs(cedula);
+                    foreach (var item in temoPagosPMA)
+                    {
+                        mostrarPagosBancaWeb pagos = new mostrarPagosBancaWeb(item.cedula, item.cod_pago, item.monto, item.estado, item.nServicio);
+                        lstPagosBanca.Add(pagos);
+                    }
+                    break;
                 default:
                     break;
             }
@@ -139,8 +159,6 @@ namespace Middleware
                     return datosIntegracion.realizarPagosPCA(codPago);
                 case "Servicio de Internet":
                     return datosIntegracion.realizarPagosPIT(codPago);
-                default:
-                    break;
                 case "Pago de Almacenamiento en la nube":
                     return datosIntegracion.realizarPagosPAN(codPago);
                 case "Pago de Planes de Teléfono":
@@ -153,6 +171,12 @@ namespace Middleware
                     return datosIntegracion.realizarPagosPMX(codPago);
                 case "Recarga de Juegos Gacha":
                     return datosIntegracion.realizarPagos(codPago);
+                /*case "Pago de Suscripcion de Musica":
+                    return datosIntegracion.realizarPagosPSM(codPago);*/
+                case "Pago Membresia":
+                    return datosIntegracion.realizarPagosPMA(codPago);
+                default:
+                    break;
             }
             return false;
         }

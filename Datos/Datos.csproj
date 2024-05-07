@@ -50,6 +50,26 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Web References\no\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_MQULst\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_MQUPGA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_MQUServ\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\WS_PAL\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,12 +95,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\WS_PMA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\WS_PMX\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\WS_PRJ\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS_PSM\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -119,6 +149,28 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Datos_WS_PRJ_Api_Integracion</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.16.0.58:5012/API_MostrarServicioPMA.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_PMA\</RelPath>
+      <UpdateFromURL>http://172.16.0.58:5012/API_MostrarServicioPMA.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Datos_WS_PMA_API_MostrarServicioPMA</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.16.0.58:5013/API_MostrarServicioPSM.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_PSM\</RelPath>
+      <UpdateFromURL>http://172.16.0.58:5013/API_MostrarServicioPSM.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Datos_WS_PSM_API_MostrarServicioPSM</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://172.16.0.58:5014/API_MostrarServicioPIT.asmx%3fWSDL">
       <UrlBehavior>Dynamic</UrlBehavior>
@@ -186,12 +238,82 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Datos_WS_PCA_API_MostrarServicioPCA</CachedSettingsPropName>
     </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.16.7.7:5050/APIMQU_MS.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_MQUServ\</RelPath>
+      <UpdateFromURL>http://172.16.7.7:5050/APIMQU_MS.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Datos_WS_MQUServ_APIMQU_MS</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.16.7.7:5051/APIMQU_MD.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\no\</RelPath>
+      <UpdateFromURL>http://172.16.7.7:5051/APIMQU_MD.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Datos_WS_MQUlLstPagos_APIMQU_MD</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.16.7.7:5051/API_MDP.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_MQUPGA\</RelPath>
+      <UpdateFromURL>http://172.16.7.7:5051/API_MDP.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Datos_WS_MQUPGA_API_MDP</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.16.7.7:5052/APIMQU_AD.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_MQULst\</RelPath>
+      <UpdateFromURL>http://172.16.7.7:5052/APIMQU_AD.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Datos_WS_MQULst_APIMQU_AD</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\no\APIMQU_MD.wsdl" />
+    <None Include="Web References\no\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\no\SP_DatosClientePago_Result1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_MQULst\APIMQU_AD.wsdl" />
+    <None Include="Web References\WS_MQULst\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_MQUPGA\API_MDP.wsdl" />
+    <None Include="Web References\WS_MQUPGA\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_MQUPGA\SP_DatosClientePagosPendientes_Result.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_MQUServ\APIMQU_MS.wsdl" />
+    <None Include="Web References\WS_MQUServ\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\WS_PAL\API_MostrarServicioPAL.wsdl" />
     <None Include="Web References\WS_PAL\MostrarPagosPAL.datasource">
@@ -248,6 +370,17 @@
     <None Include="Web References\WS_PIT\Servicio.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\WS_PMA\API_MostrarServicioPMA.wsdl" />
+    <None Include="Web References\WS_PMA\MostrarPagosPMA.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_PMA\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_PMA\Servicio.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\WS_PMX\API_MostrarServicioPMX.wsdl" />
     <None Include="Web References\WS_PMX\MostrarPagosPMX.datasource">
       <DependentUpon>Reference.map</DependentUpon>
@@ -270,6 +403,17 @@
     <None Include="Web References\WS_PRJ\Servicio.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\WS_PSM\API_MostrarServicioPSM.wsdl" />
+    <None Include="Web References\WS_PSM\MostrarPagosPSM.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS_PSM\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS_PSM\Servicio.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\WS_PTO\API_MostrarServicioPTO.wsdl" />
     <None Include="Web References\WS_PTO\MostrarPagosPTO.datasource">
       <DependentUpon>Reference.map</DependentUpon>
@@ -281,6 +425,12 @@
     <None Include="Web References\WS_PTO\Servicio.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PatronDiseño\PatronDiseño.csproj">
+      <Project>{c316a6c7-c307-494b-a3d1-65344ebafd21}</Project>
+      <Name>PatronDiseño</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

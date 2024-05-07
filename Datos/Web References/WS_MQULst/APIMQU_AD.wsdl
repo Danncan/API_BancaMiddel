@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ActualizarDatos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cedula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codpago" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarDatosResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ActualizarDatoscodpago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codpago" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarDatoscodpagoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ActualizarDatoscodpagocondtpago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codpago" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarDatoscodpagocondtpagoResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ActualizarDatosSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarDatos" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarDatosSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarDatosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarDatoscodpagoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarDatoscodpago" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarDatoscodpagoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarDatoscodpagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarDatoscodpagocondtpagoSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarDatoscodpagocondtpago" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarDatoscodpagocondtpagoSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarDatoscodpagocondtpagoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="APIMQU_ADSoap">
+    <wsdl:operation name="ActualizarDatos">
+      <wsdl:input message="tns:ActualizarDatosSoapIn" />
+      <wsdl:output message="tns:ActualizarDatosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDatoscodpago">
+      <wsdl:input message="tns:ActualizarDatoscodpagoSoapIn" />
+      <wsdl:output message="tns:ActualizarDatoscodpagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDatoscodpagocondtpago">
+      <wsdl:input message="tns:ActualizarDatoscodpagocondtpagoSoapIn" />
+      <wsdl:output message="tns:ActualizarDatoscodpagocondtpagoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="APIMQU_ADSoap" type="tns:APIMQU_ADSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ActualizarDatos">
+      <soap:operation soapAction="http://tempuri.org/ActualizarDatos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDatoscodpago">
+      <soap:operation soapAction="http://tempuri.org/ActualizarDatoscodpago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDatoscodpagocondtpago">
+      <soap:operation soapAction="http://tempuri.org/ActualizarDatoscodpagocondtpago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="APIMQU_ADSoap12" type="tns:APIMQU_ADSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ActualizarDatos">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarDatos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDatoscodpago">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarDatoscodpago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarDatoscodpagocondtpago">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarDatoscodpagocondtpago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="APIMQU_AD">
+    <wsdl:port name="APIMQU_ADSoap" binding="tns:APIMQU_ADSoap">
+      <soap:address location="http://172.16.7.7:5052/APIMQU_AD.asmx" />
+    </wsdl:port>
+    <wsdl:port name="APIMQU_ADSoap12" binding="tns:APIMQU_ADSoap12">
+      <soap12:address location="http://172.16.7.7:5052/APIMQU_AD.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

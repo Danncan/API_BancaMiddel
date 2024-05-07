@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="MostrarDescripcion">
+        <s:complexType />
+      </s:element>
+      <s:element name="MostrarDescripcionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MostrarDescripcionResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="MostrarDescripcionSoapIn">
+    <wsdl:part name="parameters" element="tns:MostrarDescripcion" />
+  </wsdl:message>
+  <wsdl:message name="MostrarDescripcionSoapOut">
+    <wsdl:part name="parameters" element="tns:MostrarDescripcionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="APIMQU_MSSoap">
+    <wsdl:operation name="MostrarDescripcion">
+      <wsdl:input message="tns:MostrarDescripcionSoapIn" />
+      <wsdl:output message="tns:MostrarDescripcionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="APIMQU_MSSoap" type="tns:APIMQU_MSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MostrarDescripcion">
+      <soap:operation soapAction="http://tempuri.org/MostrarDescripcion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="APIMQU_MSSoap12" type="tns:APIMQU_MSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MostrarDescripcion">
+      <soap12:operation soapAction="http://tempuri.org/MostrarDescripcion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="APIMQU_MS">
+    <wsdl:port name="APIMQU_MSSoap" binding="tns:APIMQU_MSSoap">
+      <soap:address location="http://172.16.7.7:5050/APIMQU_MS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="APIMQU_MSSoap12" binding="tns:APIMQU_MSSoap12">
+      <soap12:address location="http://172.16.7.7:5050/APIMQU_MS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

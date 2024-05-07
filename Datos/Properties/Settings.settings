@@ -26,5 +26,23 @@
     <Setting Name="Datos_WS_PRJ_Api_Integracion" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://172.16.0.58:5011/Api_Integracion.asmx</Value>
     </Setting>
+    <Setting Name="Datos_WS_PSM_API_MostrarServicioPSM" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5013/API_MostrarServicioPSM.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_PMA_API_MostrarServicioPMA" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.0.58:5012/API_MostrarServicioPMA.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_MQUServ_APIMQU_MS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.7.7:5050/APIMQU_MS.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_MQULst_APIMQU_AD" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.7.7:5052/APIMQU_AD.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_MQUlLstPagos_APIMQU_MD" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.7.7:5051/APIMQU_MD.asmx</Value>
+    </Setting>
+    <Setting Name="Datos_WS_MQUPGA_API_MDP" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.16.7.7:5051/API_MDP.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

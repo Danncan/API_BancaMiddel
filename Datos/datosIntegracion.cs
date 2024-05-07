@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PatronDiseño;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -158,7 +159,81 @@ namespace Datos
 
         #endregion
 
+        #region Pato
+        WS_PSM.API_MostrarServicioPSM wsPsm = new WS_PSM.API_MostrarServicioPSM();
+
+        public WS_PSM.Servicio ServiciosPSM()
+        {
+            return wsPsm.mostrarServicio();
+        }
+        public List<WS_PSM.MostrarPagosPSM> mostrarPagosPSMs(string cedula)
+        {
+            return wsPsm.mostrarPagosPSMs(cedula).ToList();
+        }
+        /*
+        public bool realizarPagosPSM(string codPago)
+        {
+            return wsPsm.ActualizarEstado(codPago);
+        }*/
+
+        #endregion
+        #region Erick
+        WS_PMA.API_MostrarServicioPMA wsPma = new WS_PMA.API_MostrarServicioPMA();
+        public WS_PMA.Servicio ServiciosPMA()
+        {
+            return wsPma.mostrarServicio();
+        }
+        public List<WS_PMA.MostrarPagosPMA> mostrarPagosPMAs(string cedula)
+        {
+            return wsPma.mostrarPagosPMA(cedula).ToList();
+        }
+        public bool realizarPagosPMA(string codPago)
+        {
+            return wsPma.ActualizarEstado(codPago);
+        }
+        #endregion
+        #region pupi
+        public mostrarServiciosBancaWeb ServiciosMQUServ()
+        {
+            WS_MQUServ.APIMQU_MS tempNombreServicio = new WS_MQUServ.APIMQU_MS();
+
+            string[] tempnombre =tempNombreServicio.MostrarDescripcion();
+            mostrarServiciosBancaWeb tempServicio = new mostrarServiciosBancaWeb(tempnombre[0], tempnombre[1]);
+            return tempServicio;
+        }
+
+        public bool ActualizarDatoscodpago(string codPagos)
+        {
+            try
+            {
+                WS_MQULst.APIMQU_AD tempActualizarPagos = new WS_MQULst.APIMQU_AD();
+                tempActualizarPagos.ActualizarDatoscodpago(codPagos);
+                return true;  // No hubo excepciones, operación exitosa.
+            }
+            catch (Exception ex)
+            {
+                // Puedes manejar la excepción de alguna manera si es necesario, como registrarla en un log.
+                Console.WriteLine("Error al actualizar datos de pago: " + ex.Message);
+                return false;  // Ocurrió una excepción, operación fallida.
+            }
+        }
 
 
+        public List<mostrarPagosBancaWeb> mostrarPagosMQUServ(string cedula)
+        {
+            WS_MQUPGA.API_MDP temPagos = new WS_MQUPGA.API_MDP();
+            var tempPagoslst = temPagos.Mandardatos(cedula).ToList();
+            List<mostrarPagosBancaWeb> lstPagosBanca = new List<mostrarPagosBancaWeb>();
+            mostrarPagosBancaWeb tempPagosWeb;
+            foreach (var item in tempPagoslst)
+            {
+                tempPagosWeb = new mostrarPagosBancaWeb(item.Cedula, item.CodigoPago,(decimal) item.Monto, item.EstadoPago, item.Servicio);
+                lstPagosBanca.Add(tempPagosWeb);
+            }
+
+            return lstPagosBanca;
+        }
+
+        #endregion
     }
 }

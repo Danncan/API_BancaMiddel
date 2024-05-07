@@ -102,5 +102,65 @@ namespace Datos.Properties {
                 return ((string)(this["Datos_WS_PRJ_Api_Integracion"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.0.58:5013/API_MostrarServicioPSM.asmx")]
+        public string Datos_WS_PSM_API_MostrarServicioPSM {
+            get {
+                return ((string)(this["Datos_WS_PSM_API_MostrarServicioPSM"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.0.58:5012/API_MostrarServicioPMA.asmx")]
+        public string Datos_WS_PMA_API_MostrarServicioPMA {
+            get {
+                return ((string)(this["Datos_WS_PMA_API_MostrarServicioPMA"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.7.7:5050/APIMQU_MS.asmx")]
+        public string Datos_WS_MQUServ_APIMQU_MS {
+            get {
+                return ((string)(this["Datos_WS_MQUServ_APIMQU_MS"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.7.7:5052/APIMQU_AD.asmx")]
+        public string Datos_WS_MQULst_APIMQU_AD {
+            get {
+                return ((string)(this["Datos_WS_MQULst_APIMQU_AD"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.7.7:5051/APIMQU_MD.asmx")]
+        public string Datos_WS_MQUlLstPagos_APIMQU_MD {
+            get {
+                return ((string)(this["Datos_WS_MQUlLstPagos_APIMQU_MD"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://172.16.7.7:5051/API_MDP.asmx")]
+        public string Datos_WS_MQUPGA_API_MDP {
+            get {
+                return ((string)(this["Datos_WS_MQUPGA_API_MDP"]));
+            }
+        }
     }
 }
