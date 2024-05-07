@@ -96,6 +96,10 @@
       <Name>PatronDiseño</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\Microservicios\Parcial1\ProyectoPrimerParcial\API_Consultas\API_Consultas\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll" />
+    <Analyzer Include="..\..\InterfazGraficaBanca\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
